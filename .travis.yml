@@ -4,7 +4,12 @@ script: "bundle exec rake spec"
 notifications:
   email: false
 notifications:
-  irc: "irc.freenode.org#arbousier"
+  irc:
+    channels:
+      - "irc.freenode.org#arbousier"
+    use_notice: true
+    template:
+      - "%{repository} (%{commit}) : %{message} %{build_url}"
 rvm:
   - 1.9.3
   - rbx-19mode
